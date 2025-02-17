@@ -128,7 +128,7 @@
         </search>
         <option name="charting.chart">column</option>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
-        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">45</option>
         <option name="charting.axisTitleX.visibility">visible</option>
         <option name="charting.axisTitleY.visibility">visible</option>
         <option name="charting.axisTitleY2.visibility">visible</option>
@@ -232,7 +232,7 @@
           <query>table server random_seeks_latency</query>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
-        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">45</option>
         <option name="charting.axisTitleX.visibility">visible</option>
         <option name="charting.axisTitleY.visibility">visible</option>
         <option name="charting.axisTitleY2.visibility">visible</option>
@@ -306,7 +306,7 @@
         <option name="charting.chart.rangeValues">[0,1200,2400]</option>
         <option name="charting.gaugeColors">["0xBF3030","0x84E900"]</option>
         <option name="drilldown">none</option>
-        <option name="afterLabel">/sec</option>
+        <option name="afterLabel">sec</option>
       </single>
       <single>
         <title>Max</title>
@@ -327,7 +327,7 @@
         <option name="rangeColors">["0x65a637","0x6db7c6","0xf7bc38","0xf58f39","0xd93f3c"]</option>
         <option name="rangeValues">[0,30,70,100]</option>
         <option name="trendInterval">auto</option>
-        <option name="afterLabel">/sec</option>
+        <option name="afterLabel">sec</option>
       </single>
       <single>
         <title>Min</title>
@@ -348,7 +348,7 @@
         <option name="rangeColors">["0x65a637","0x6db7c6","0xf7bc38","0xf58f39","0xd93f3c"]</option>
         <option name="rangeValues">[0,30,70,100]</option>
         <option name="trendInterval">auto</option>
-        <option name="afterLabel">/sec</option>
+        <option name="afterLabel">sec</option>
       </single>
     </panel>
     <panel>
@@ -359,7 +359,7 @@
         </search>
         <option name="charting.chart">column</option>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
-        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">45</option>
         <option name="charting.axisTitleX.visibility">visible</option>
         <option name="charting.axisTitleY.visibility">visible</option>
         <option name="charting.axisTitleY2.visibility">visible</option>
@@ -381,7 +381,7 @@
         <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
         <option name="charting.legend.placement">none</option>
         <option name="charting.axisTitleX.text">Server</option>
-        <option name="charting.axisTitleY.text">IOPs/sec</option>
+        <option name="charting.axisTitleY.text">sec</option>
       </chart>
     </panel>
   </row>
@@ -390,7 +390,7 @@
       <table>
         <title>Summary</title>
         <search base="globalSearch">
-          <query>table server random_seeks_k_per_sec random_seeks_latency duration chunk_size files | sort + server</query>
+          <query>table start server random_seeks_k_per_sec random_seeks_latency duration chunk_size files | sort start</query>
         </search>
         <option name="wrap">true</option>
         <option name="rowNumbers">false</option>
