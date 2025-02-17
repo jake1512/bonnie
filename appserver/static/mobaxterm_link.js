@@ -8,12 +8,12 @@ require([
 
     var CustomLinkRenderer = TableView.BaseCellRenderer.extend({
         canRender: function(cell) {
-            return cell.field === 'iTerm';
+            return cell.field === 'MobaXterm';
         },
         render: function($td, cell) {
             var link = cell.value;
 
-            var a = $('<a>').attr("href", cell.value).text("iTerm Bits");
+            var a = $('<a>').attr("href", cell.value).text("MobaXterm");
 
             $td.addClass('table-link').empty().append(a);
                               
