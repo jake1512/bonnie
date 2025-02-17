@@ -1,4 +1,4 @@
-<form script="bonnie_link.js,mobaxterm_link.js,splunk_link.js">
+<form version="1.0" script="bonnie_link.js,mobaxterm_link.js,splunk_link.js">
   <label>Bonnie++ Resources</label>
   <row>
     <panel>
@@ -14,23 +14,13 @@
       </input>
       <input type="text" token="ram" searchWhenChanged="true">
         <label>Indexers RAM in GB</label>
-        <choice value="12">12</choice>
-        <choice value="16">16</choice>
-        <choice value="32">32</choice>
-        <choice value="64">64</choice>
-        <choice value="128">128</choice>
         <default>16</default>
-        <initialValue>16</initialValue>
+        <initialValue>32</initialValue>
       </input>
       <input type="text" token="output" searchWhenChanged="true">
         <label>Path To Output Directory</label>
         <default>/tmp</default>
         <initialValue>/tmp</initialValue>
-      </input>
-      <input type="text" token="index" searchWhenChanged="true">
-        <label>Destination Index</label>
-        <default>bonnie</default>
-        <initialValue>bonnie</initialValue>
       </input>
       <table id="link">
         <search>
@@ -74,7 +64,7 @@
             <code>yum install bonnie++</code>
           </pre>
           <p>
-            <li>Before running the Bonnie++ commands, you must decide where you want to ingest this data.  If you want to ingest it on another Splunk instance running this App, move on to the next step.  If not, install a "bonnie" index on each of your indexers.  This App has a "bonnie" index defined for you, if it is easier to install this App on all of your indexers.</li>
+            <li>Before running the Bonnie++ commands, you must decide where you want to ingest this data. If you want to ingest it on another Splunk instance running this App, move on to the next step. If not, install a "bonnie" index on each of your indexers. This App has a "bonnie" index defined for you, if it is easier to install this App on all of your indexers.</li>
           </p>
           <p>
             <li>Fill out the form above to create your custom command syntax below.</li>

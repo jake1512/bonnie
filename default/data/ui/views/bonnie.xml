@@ -1,4 +1,4 @@
-<form>
+<form version="1.0">
   <label>Bonnie++ Analysis</label>
   <fieldset submitButton="false">
     <input type="time" token="time">
@@ -19,11 +19,12 @@
       | eval random_seeks_latency = if(random_seeks_latency_us!="0", random_seeks_latency_us/1000, random_seeks_latency) 
       | eval random_seeks_latency = round(random_seeks_latency,1)
       
+      | eval time=start
       | eval start=strptime(start, "%a %b %d %I:%M:%S %p %z %Y")
       | eval finish=strptime(finish, "%a %b %d %I:%M:%S %p %z %Y")
       | eval duration=finish-start
       
-      | sort server random_seeks_k_per_sec random_seeks_latency chunk_size files duration
+      | sort server random_seeks_k_per_sec random_seeks_latency file_size chunk_size files duration
     </query>
     <earliest>$time.earliest$</earliest>
     <latest>$time.latest$</latest>
@@ -390,7 +391,7 @@
       <table>
         <title>Summary</title>
         <search base="globalSearch">
-          <query>table start server random_seeks_k_per_sec random_seeks_latency duration chunk_size files | sort start</query>
+          <query>table time server random_seeks_k_per_sec random_seeks_latency duration file_size chunk_size files | sort time</query>
         </search>
         <option name="wrap">true</option>
         <option name="rowNumbers">false</option>
